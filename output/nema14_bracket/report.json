@@ -1,0 +1,211 @@
+{
+  "part": "nema14_bracket",
+  "passed": true,
+  "checks_passed": 30,
+  "checks_total": 30,
+  "title": "NEMA 14 motor bracket",
+  "mass_g": 13.6,
+  "volume_mm3": 10982.1,
+  "stl_facets": 3120,
+  "drawing_scale": 1,
+  "summary": {
+    "motor": {
+      "face": 35.2,
+      "hole_spacing": 26.0,
+      "pilot": 22.0,
+      "screw": "M3",
+      "body_len": 34.0,
+      "shaft_d": 5.0
+    },
+    "envelope_mm": [
+      41.2,
+      32.2,
+      44.2
+    ],
+    "thickness_mm": 4.0,
+    "motor_axis_height_mm": 23.6,
+    "pilot_bore_mm": 22.5
+  },
+  "checks": [
+    {
+      "category": "topology",
+      "check": "shape is valid (BRepCheck)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "category": "topology",
+      "check": "exactly one solid",
+      "pass": true,
+      "detail": "1 solid(s)"
+    },
+    {
+      "category": "topology",
+      "check": "watertight (all shells closed)",
+      "pass": true,
+      "detail": "1 shell(s)"
+    },
+    {
+      "category": "topology",
+      "check": "positive volume",
+      "pass": true,
+      "detail": "10982.1 mm^3"
+    },
+    {
+      "category": "dimensions",
+      "check": "bounding box matches spec",
+      "pass": true,
+      "detail": "actual 41.20 x 32.20 x 44.20 / spec 41.20 x 32.20 x 44.20"
+    },
+    {
+      "category": "features",
+      "check": "pilot bore present",
+      "pass": true,
+      "detail": "dia 22.50 mm"
+    },
+    {
+      "category": "features",
+      "check": "motor screw 1 present",
+      "pass": true,
+      "detail": "dia 3.40 mm"
+    },
+    {
+      "category": "features",
+      "check": "counterbore 1 present",
+      "pass": true,
+      "detail": "dia 6.50 mm"
+    },
+    {
+      "category": "features",
+      "check": "motor screw 2 present",
+      "pass": true,
+      "detail": "dia 3.40 mm"
+    },
+    {
+      "category": "features",
+      "check": "counterbore 2 present",
+      "pass": true,
+      "detail": "dia 6.50 mm"
+    },
+    {
+      "category": "features",
+      "check": "motor screw 3 present",
+      "pass": true,
+      "detail": "dia 3.40 mm"
+    },
+    {
+      "category": "features",
+      "check": "counterbore 3 present",
+      "pass": true,
+      "detail": "dia 6.50 mm"
+    },
+    {
+      "category": "features",
+      "check": "motor screw 4 present",
+      "pass": true,
+      "detail": "dia 3.40 mm"
+    },
+    {
+      "category": "features",
+      "check": "counterbore 4 present",
+      "pass": true,
+      "detail": "dia 6.50 mm"
+    },
+    {
+      "category": "interference",
+      "check": "clear of motor body",
+      "pass": true,
+      "detail": "overlap 0.0000 mm^3"
+    },
+    {
+      "category": "interference",
+      "check": "clear of motor pilot boss",
+      "pass": true,
+      "detail": "overlap 0.0000 mm^3"
+    },
+    {
+      "category": "interference",
+      "check": "clear of motor shaft",
+      "pass": true,
+      "detail": "overlap 0.0000 mm^3"
+    },
+    {
+      "category": "interference",
+      "check": "clear of GT2 20T pulley",
+      "pass": true,
+      "detail": "overlap 0.0000 mm^3"
+    },
+    {
+      "category": "interference",
+      "check": "clear of screw head 1",
+      "pass": true,
+      "detail": "overlap 0.0000 mm^3"
+    },
+    {
+      "category": "interference",
+      "check": "clear of hex key access 1",
+      "pass": true,
+      "detail": "overlap 0.0000 mm^3"
+    },
+    {
+      "category": "interference",
+      "check": "clear of screw head 2",
+      "pass": true,
+      "detail": "overlap 0.0000 mm^3"
+    },
+    {
+      "category": "interference",
+      "check": "clear of hex key access 2",
+      "pass": true,
+      "detail": "overlap 0.0000 mm^3"
+    },
+    {
+      "category": "interference",
+      "check": "clear of screw head 3",
+      "pass": true,
+      "detail": "overlap 0.0000 mm^3"
+    },
+    {
+      "category": "interference",
+      "check": "clear of hex key access 3",
+      "pass": true,
+      "detail": "overlap 0.0000 mm^3"
+    },
+    {
+      "category": "interference",
+      "check": "clear of screw head 4",
+      "pass": true,
+      "detail": "overlap 0.0000 mm^3"
+    },
+    {
+      "category": "interference",
+      "check": "clear of hex key access 4",
+      "pass": true,
+      "detail": "overlap 0.0000 mm^3"
+    },
+    {
+      "category": "manufacturability",
+      "check": "counterbore to pilot bore >= 1.5 mm",
+      "pass": true,
+      "detail": "3.88 mm"
+    },
+    {
+      "category": "manufacturability",
+      "check": "material under counterbore >= 1.5 mm",
+      "pass": true,
+      "detail": "2.50 mm"
+    },
+    {
+      "category": "manufacturability",
+      "check": "base slot to outer edge >= 1.5 mm",
+      "pass": true,
+      "detail": "7.00 mm"
+    },
+    {
+      "category": "manufacturability",
+      "check": "lower screw axis above base >= 1.5 mm",
+      "pass": true,
+      "detail": "3.85 mm"
+    }
+  ]
+}

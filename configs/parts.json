@@ -1,0 +1,87 @@
+{
+  "author": "P. A. Denora",
+  "brackets": [
+    {
+      "id": "nema17_bracket",
+      "title": "NEMA 17 motor bracket",
+      "motor": "NEMA17",
+      "thickness": 5.0,
+      "margin": 3.0,
+      "motor_clearance": 2.0,
+      "base_screw": "M5",
+      "material": "PLA (FDM, 40% gyroid)",
+      "density": 1.24
+    },
+    {
+      "id": "nema14_bracket",
+      "title": "NEMA 14 motor bracket",
+      "motor": "NEMA14",
+      "thickness": 4.0,
+      "margin": 3.0,
+      "motor_clearance": 2.0,
+      "base_screw": "M4",
+      "material": "PLA (FDM, 40% gyroid)",
+      "density": 1.24
+    },
+    {
+      "id": "nema23_bracket",
+      "title": "NEMA 23 motor bracket",
+      "motor": "NEMA23",
+      "thickness": 6.0,
+      "margin": 6.5,
+      "motor_clearance": 2.0,
+      "base_screw": "M5",
+      "counterbore_depth": 2.5,
+      "bend_radius": 4.0,
+      "material": "Aluminium 6061-T6",
+      "density": 2.70
+    }
+  ],
+  "enclosures": [
+    {
+      "id": "sensor_node_enclosure",
+      "title": "Sensor node enclosure",
+      "material": "PETG (FDM)",
+      "density": 1.27,
+      "wall": 2.0,
+      "floor": 2.0,
+      "lid": 2.0,
+      "clearance": 0.8,
+      "outer_radius": 3.0,
+      "standoff": 4.0,
+      "component_gap": 2.2,
+      "boss_d": 6.0,
+      "pilot_d": 2.5,
+      "floor_under_pilot": 0.6,
+      "standoff_d": 5.6,
+      "screw_clearance": 3.4,
+      "csk_d": 6.4,
+      "lip_height": 2.0,
+      "lip_thickness": 1.2,
+      "lip_clearance": 0.2,
+      "usb_cutout_w": 12.6,
+      "usb_cutout_h": 7.0,
+      "usb_plug": { "w": 12.2, "h": 6.6, "inset": 1.0 },
+      "led_hole_d": 2.6,
+      "pinhole_d": 2.0,
+      "vent_count": 4,
+      "vent_pitch": 2.8,
+      "vent_length": 8.0,
+      "vent_width": 1.6,
+      "board": {
+        "name": "ESP32-C3 sensor node rev A (see esp32c3-sensor-node-pcb)",
+        "length": 50.0,
+        "width": 40.0,
+        "thickness": 1.6,
+        "holes": [[3.5, 3.5], [46.5, 3.5], [3.5, 36.5], [46.5, 36.5]],
+        "hole_d": 3.2,
+        "hole_keepout_d": 6.4,
+        "component_height_top": 4.2,
+        "usb_c": { "edge": "left", "y": 20.0, "height": 3.26 },
+        "led": [11.0, 33.0],
+        "buttons": [[10.0, 8.0], [17.5, 8.0]],
+        "sensor": [42.0, 27.0]
+      }
+    }
+  ]
+}

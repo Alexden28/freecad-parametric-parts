@@ -1,0 +1,249 @@
+{
+  "part": "sensor_node_enclosure",
+  "passed": true,
+  "checks_passed": 37,
+  "checks_total": 37,
+  "title": "Sensor node enclosure",
+  "mass_g": 19.6,
+  "stl_facets": 8524,
+  "drawing_scale": 1,
+  "summary": {
+    "board": "ESP32-C3 sensor node rev A (see esp32c3-sensor-node-pcb)",
+    "outer_mm": [
+      55.6,
+      45.6,
+      16.0
+    ],
+    "pcb_bottom_z_mm": 6.0,
+    "screws": {
+      "clamp_mm": 10.0,
+      "pilot_depth_mm": 5.4,
+      "screw": "M3x14 ISO 10642",
+      "engagement_mm": 4.0
+    }
+  },
+  "checks": [
+    {
+      "category": "topology",
+      "check": "base: shape is valid (BRepCheck)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "category": "topology",
+      "check": "base: exactly one solid",
+      "pass": true,
+      "detail": "1 solid(s)"
+    },
+    {
+      "category": "topology",
+      "check": "base: watertight (all shells closed)",
+      "pass": true,
+      "detail": "1 shell(s)"
+    },
+    {
+      "category": "topology",
+      "check": "base: positive volume",
+      "pass": true,
+      "detail": "9829.5 mm^3"
+    },
+    {
+      "category": "topology",
+      "check": "lid: shape is valid (BRepCheck)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "category": "topology",
+      "check": "lid: exactly one solid",
+      "pass": true,
+      "detail": "1 solid(s)"
+    },
+    {
+      "category": "topology",
+      "check": "lid: watertight (all shells closed)",
+      "pass": true,
+      "detail": "1 shell(s)"
+    },
+    {
+      "category": "topology",
+      "check": "lid: positive volume",
+      "pass": true,
+      "detail": "5628.3 mm^3"
+    },
+    {
+      "category": "dimensions",
+      "check": "base: bounding box matches spec",
+      "pass": true,
+      "detail": "actual 55.60 x 45.60 x 14.00 / spec 55.60 x 45.60 x 14.00"
+    },
+    {
+      "category": "features",
+      "check": "boss pilot 1 present",
+      "pass": true,
+      "detail": "dia 2.50 mm"
+    },
+    {
+      "category": "features",
+      "check": "boss pilot 2 present",
+      "pass": true,
+      "detail": "dia 2.50 mm"
+    },
+    {
+      "category": "features",
+      "check": "boss pilot 3 present",
+      "pass": true,
+      "detail": "dia 2.50 mm"
+    },
+    {
+      "category": "features",
+      "check": "boss pilot 4 present",
+      "pass": true,
+      "detail": "dia 2.50 mm"
+    },
+    {
+      "category": "features",
+      "check": "screw clearance 1 present",
+      "pass": true,
+      "detail": "dia 3.40 mm"
+    },
+    {
+      "category": "features",
+      "check": "screw clearance 2 present",
+      "pass": true,
+      "detail": "dia 3.40 mm"
+    },
+    {
+      "category": "features",
+      "check": "screw clearance 3 present",
+      "pass": true,
+      "detail": "dia 3.40 mm"
+    },
+    {
+      "category": "features",
+      "check": "screw clearance 4 present",
+      "pass": true,
+      "detail": "dia 3.40 mm"
+    },
+    {
+      "category": "features",
+      "check": "LED light hole present",
+      "pass": true,
+      "detail": "dia 2.60 mm"
+    },
+    {
+      "category": "features",
+      "check": "button pinhole 1 present",
+      "pass": true,
+      "detail": "dia 2.00 mm"
+    },
+    {
+      "category": "features",
+      "check": "button pinhole 2 present",
+      "pass": true,
+      "detail": "dia 2.00 mm"
+    },
+    {
+      "category": "interference",
+      "check": "clear of PCB (with mounting holes)",
+      "pass": true,
+      "detail": "overlap 0.0000 mm^3"
+    },
+    {
+      "category": "interference",
+      "check": "clear of components (top side)",
+      "pass": true,
+      "detail": "overlap 0.0000 mm^3"
+    },
+    {
+      "category": "interference",
+      "check": "clear of USB-C plug overmold",
+      "pass": true,
+      "detail": "overlap 0.0000 mm^3"
+    },
+    {
+      "category": "interference",
+      "check": "clear of PCB (with mounting holes)",
+      "pass": true,
+      "detail": "overlap 0.0000 mm^3"
+    },
+    {
+      "category": "interference",
+      "check": "clear of components (top side)",
+      "pass": true,
+      "detail": "overlap 0.0000 mm^3"
+    },
+    {
+      "category": "interference",
+      "check": "clear of base (assembled)",
+      "pass": true,
+      "detail": "overlap 0.0000 mm^3"
+    },
+    {
+      "category": "interference",
+      "check": "lid openings clear of standoffs and lip",
+      "pass": true,
+      "detail": "overlap 0.0000 mm^3"
+    },
+    {
+      "category": "fasteners",
+      "check": "standard M3 countersunk screw fits the stack",
+      "pass": true,
+      "detail": "M3x14 ISO 10642"
+    },
+    {
+      "category": "fasteners",
+      "check": "thread engagement >= 1.3 x d (3.9 mm)",
+      "pass": true,
+      "detail": "4.0 mm"
+    },
+    {
+      "category": "manufacturability",
+      "check": "wall thickness >= 0.6 mm",
+      "pass": true,
+      "detail": "2.00 mm"
+    },
+    {
+      "category": "manufacturability",
+      "check": "floor under boss pilot >= 0.6 mm",
+      "pass": true,
+      "detail": "0.60 mm"
+    },
+    {
+      "category": "manufacturability",
+      "check": "bridge above USB cutout >= 0.6 mm",
+      "pass": true,
+      "detail": "1.27 mm"
+    },
+    {
+      "category": "manufacturability",
+      "check": "wall below USB cutout to floor >= 0.6 mm",
+      "pass": true,
+      "detail": "3.73 mm"
+    },
+    {
+      "category": "manufacturability",
+      "check": "boss wall around pilot >= 0.6 mm",
+      "pass": true,
+      "detail": "1.75 mm"
+    },
+    {
+      "category": "manufacturability",
+      "check": "standoff wall around screw >= 0.6 mm",
+      "pass": true,
+      "detail": "1.10 mm"
+    },
+    {
+      "category": "manufacturability",
+      "check": "lid under countersink, outside standoff >= 0.6 mm",
+      "pass": true,
+      "detail": "1.60 mm"
+    },
+    {
+      "category": "manufacturability",
+      "check": "walls >= 4 perimeters of a 0.4 mm nozzle",
+      "pass": true,
+      "detail": "2.0 mm"
+    }
+  ]
+}
