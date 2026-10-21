@@ -69,7 +69,7 @@
       "vent_length": 8.0,
       "vent_width": 1.6,
       "board": {
-        "name": "ESP32-C3 sensor node rev A (see esp32c3-sensor-node-pcb)",
+        "name": "ESP32-C3 sensor node rev A (positions from esp32c3-sensor-node-pcb)",
         "length": 50.0,
         "width": 40.0,
         "thickness": 1.6,
@@ -77,10 +77,11 @@
         "hole_d": 3.2,
         "hole_keepout_d": 6.4,
         "component_height_top": 4.2,
-        "usb_c": { "edge": "left", "y": 20.0, "height": 3.26 },
-        "led": [11.0, 33.0],
-        "buttons": [[10.0, 8.0], [17.5, 8.0]],
-        "sensor": [42.0, 27.0]
+        "usb_c": { "edge": "left", "y": 27.0, "height": 3.26 },
+        "led": [41.8, 21.0],
+        "buttons": [[20.6, 24.4], [29.4, 24.4]],
+        "sensor": [40.0, 29.5],
+        "step": "configs/esp32c3-sensor-node.step"
       }
     }
   ]

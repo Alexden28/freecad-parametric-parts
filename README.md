@@ -10,7 +10,7 @@ and manufacturability. The run is fully headless (`FreeCADCmd`), so it can gate 
 |---|---|
 | ![NEMA 17 bracket](output/nema17_bracket/preview.png) | ![Enclosure exploded](output/sensor_node_enclosure/exploded.png) |
 
-**127 / 127 automated checks pass** on the 4 generated parts. See [output/VALIDATION.md](output/VALIDATION.md).
+**130 / 130 automated checks pass** on the 4 generated parts. See [output/VALIDATION.md](output/VALIDATION.md).
 
 ## What gets generated
 
@@ -45,7 +45,10 @@ change (FreeCAD's topological naming problem).
 ### Sensor-node enclosure ([`cadlib/enclosure.py`](cadlib/enclosure.py))
 This is the case for the board in [esp32c3-sensor-node-pcb](https://github.com/Alexden28/esp32c3-sensor-node-pcb).
 The geometry is derived from the board's interface data (outline, mounting holes, USB-C position,
-LED, buttons, sensor location, component height):
+LED, buttons, sensor location, component height), taken from the PCB placement. The result is then
+checked against the **STEP model that KiCad exports from the routed board**, with the component 3D
+models (`configs/esp32c3-sensor-node.step`): neither the base nor the lid may touch any of its
+52 solids, and the tallest real component (3.2 mm) must fit the height budget.
 - the PCB is clamped between bosses in the base and standoffs hanging from the lid;
 - four M3 countersunk screws go through lid, standoff and PCB into the bosses (the pipeline picks
   the screw length, **M3×14 ISO 10642**, and checks thread engagement);
@@ -61,7 +64,7 @@ LED, buttons, sensor location, component height):
 | Topology | BRepCheck validity, exactly one solid, watertight shells, positive volume |
 | Dimensions | Bounding box against the spec envelope |
 | Features | Every hole exists as a cylindrical face with the right diameter, on the right axis |
-| Interference | Zero-volume intersection with the mating parts: motor body, pilot, shaft, GT2 pulley, screw heads, hex-key access paths, PCB, top-side components, USB-C plug, lid vs base |
+| Interference | Zero-volume intersection with the mating parts: motor body, pilot, shaft, GT2 pulley, screw heads, hex-key access paths, PCB, top-side components, USB-C plug, lid vs base, and the KiCad 3D model of the routed PCB |
 | Fasteners | A standard screw length exists for the clamp stack; thread engagement ≥ 1.3·d |
 | Manufacturability | Minimum webs (counterbore to bore, under counterbores, bridges over cutouts, boss walls), FDM wall ≥ 4 perimeters |
 
@@ -85,7 +88,7 @@ Requires [FreeCAD 1.x](https://www.freecad.org/) (it ships with Python, numpy an
 freecadcmd generate.py
 ```
 
-The exit status is non-zero if any check fails. A full run of all four parts takes about 20 s.
+The exit status is non-zero if any check fails. A full run of all four parts takes about 25 s.
 
 ## Layout
 

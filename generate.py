@@ -88,6 +88,23 @@ def run_enclosure(cfg, author):
     validate.min_webs(report, enclosure.min_webs(d), 0.6)
     report.check("manufacturability", "walls >= 4 perimeters of a 0.4 mm nozzle", d["wall"] >= 1.6, f"{d['wall']} mm")
 
+    # Cross-check against the real board: the STEP exported by KiCad from the routed PCB, with the
+    # component 3D models. Its origin is the board's bottom-left corner, Z = 0 at the board's underside.
+    pcb_parts = None
+    if cfg["board"].get("step"):
+        assembly = Part.read(os.path.join(ROOT, cfg["board"]["step"]))
+        assembly.translate(V(d["offset"], d["offset"], d["pcb_bottom"]))
+        solids = sorted(assembly.Solids, key=lambda s: s.Volume, reverse=True)
+        board_body, components = solids[0], Part.makeCompound(solids[1:])
+        tallest = assembly.BoundBox.ZMax - (d["pcb_bottom"] + d["board"]["thickness"])
+        report.check("interference", "KiCad PCB 3D model clear of base", base.common(assembly).Volume < validate.VOLUME_EPS,
+                     f"{len(solids)} solids from {cfg['board']['step']}")
+        report.check("interference", "KiCad PCB 3D model clear of lid", lid.common(assembly).Volume < validate.VOLUME_EPS,
+                     f"overlap {lid.common(assembly).Volume:.4f} mm^3")
+        report.check("dimensions", "tallest real component within the height budget",
+                     tallest <= d["board"]["component_height_top"], f"{tallest:.2f} mm of {d['board']['component_height_top']} mm")
+        pcb_parts = (board_body, components)
+
     mass = validate.mass(base, d["density"]) + validate.mass(lid, d["density"])
     pcb = built["mates"]["PCB (with mounting holes)"]
     export.fcstd(os.path.join(folder, f"{cfg['id']}.FCStd"),
@@ -107,7 +124,8 @@ def run_enclosure(cfg, author):
 
     exploded = lid.copy()
     exploded.translate(V(0, 0, 18))
-    render.render([(base, COLORS["base"], 1.0), (pcb, COLORS["pcb"], 1.0), (exploded, COLORS["lid"], 0.85)],
+    board_items = [(pcb_parts[0], COLORS["pcb"], 1.0), (pcb_parts[1], (0.35, 0.36, 0.40), 1.0)] if pcb_parts else [(pcb, COLORS["pcb"], 1.0)]
+    render.render([(base, COLORS["base"], 1.0), *board_items, (exploded, COLORS["lid"], 0.85)],
                   os.path.join(folder, "exploded.png"), elev=28, azim=-60)
     render.render([(base, COLORS["base"], 1.0), (lid, COLORS["lid"], 1.0)], os.path.join(folder, "preview.png"), elev=30, azim=-50)
     return save_report(folder, report, {"title": cfg["title"], "mass_g": round(mass, 1), "stl_facets": facets,
